@@ -2,5 +2,11 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#50B4FB</color>
+
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_default">#50B4FB</color>
+    <color name="color_transport">#00000000</color>
+    <color name="color_contact_search_view_bg">#e6e6e6</color>
+    <color name="color_contact_item_initials_bg">#F0F0F0</color>
 </resources>
