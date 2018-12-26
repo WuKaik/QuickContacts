@@ -1,5 +1,11 @@
 package com.sasincomm.quickcontacts.adapter;
 
+import android.content.ContentUris;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,10 +17,21 @@ import com.sasincomm.quickcontacts.base.BaseRecyclerViewAdapter;
 import com.sasincomm.quickcontacts.base.BaseViewHolder;
 import com.sasincomm.quickcontacts.model.Contact;
 
+import java.io.InputStream;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * 作者：wk on 2018/12/24.
  */
 public class ContactAdapter extends BaseRecyclerViewAdapter {
+
+    private Context mContext;
+
+    public ContactAdapter(Context context)
+    {
+        mContext=context;
+    }
 
     @Override
     public View getHolderView(ViewGroup parent, int position) {
@@ -36,7 +53,18 @@ public class ContactAdapter extends BaseRecyclerViewAdapter {
             }
             //显示联系人姓名
             ((TextView)holder.getView(R.id.item_contact_name)).setText((contact.getName()));
-            //((CircleImageView)holder.getView(R.id.item_contact_image)).setImageBitmap();
+            //显示图像
+            if (0 == contact.getPhotoId()) {
+                ((CircleImageView)holder.getView(R.id.item_contact_image)).setImageResource(R.mipmap.ic_launcher);
+            } else {
+                Uri uri = ContentUris.withAppendedId(
+                        ContactsContract.Contacts.CONTENT_URI,
+                        contact.getId());
+                InputStream input = ContactsContract.Contacts
+                        .openContactPhotoInputStream(mContext.getContentResolver(), uri);
+                Bitmap contactPhoto = BitmapFactory.decodeStream(input);
+                ((CircleImageView)holder.getView(R.id.item_contact_image)).setImageBitmap(contactPhoto);
+            }
         }
     }
 

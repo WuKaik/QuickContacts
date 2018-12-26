@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">QuickContacts</string>
     <string name="hint_input_keyword">please enter key words</string>
+    <string name="back">返回</string>
 </resources>

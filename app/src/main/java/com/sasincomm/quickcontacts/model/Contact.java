@@ -1,10 +1,13 @@
 package com.sasincomm.quickcontacts.model;
 
+import java.io.Serializable;
+
 /**
  * 作者：wk on 2018/12/24.
  */
-public class Contact {
+public class Contact implements Serializable{
     private int id;
+    private int rawId;
     private Long photoId;
     private String name;
     private String phoneNum;
@@ -18,6 +21,14 @@ public class Contact {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getRawId() {
+        return rawId;
+    }
+
+    public void setRawId(int rawId) {
+        this.rawId = rawId;
     }
 
     public Long getPhotoId() {
@@ -72,6 +83,7 @@ public class Contact {
     public String toString() {
         return "Contact: "
                 +"id: "+id
+                +"rawId: "+rawId
                 +"photoId: "+photoId
                 +"phoneNum: "+phoneNum
                 +"sortKey: "+sortKey

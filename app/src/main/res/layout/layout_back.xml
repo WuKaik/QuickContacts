@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@mipmap/nav_bg">
+
+    <Button
+        android:id="@+id/btn_back_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:background="@color/color_transport"
+        android:textColor="@color/color_white"
+        android:text="@string/back"
+        android:textSize="20sp"
+        android:drawableLeft="@mipmap/icon_back_white_normal"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:id="@+id/tv_back_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/color_white"
+        android:textSize="24sp"/>
+
+    <Button
+        android:id="@+id/btn_back_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/btn_back_delete"
+        android:layout_centerVertical="true"
+        android:background="@color/color_transport"
+        android:text="更新"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"
+        android:layout_marginRight="10dp"
+        android:textAllCaps="false"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btn_back_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/btn_back_right"
+        android:layout_centerVertical="true"
+        android:background="@color/color_transport"
+        android:text="删除"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"
+        android:layout_marginRight="10dp"
+        android:textAllCaps="false"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btn_back_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@color/color_transport"
+        android:text="编辑"
+        android:textColor="@color/color_white"
+        android:textSize="20sp"
+        android:layout_marginRight="10dp"
+        android:textAllCaps="false"/>
+
+</RelativeLayout>
