@@ -80,7 +80,7 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                mContactAdapter.getFilter().filter(s);
             }
 
             @Override
